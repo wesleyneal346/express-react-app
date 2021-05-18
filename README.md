@@ -1,10 +1,13 @@
-The server was generated using [express-generator](https://expressjs.com/en/starter/generator.html) and the client was generated using [Create React App](https://github.com/facebook/create-react-app).
+# Mountain America Coding Callenge
+Using these projects as a base, fork this repo, and **write an Express API and React app to display a list of Animals**.
 
-Using these projects as a base, Fork this repo, and **write an Express API and React app to display a list of Animals**. Some placeholder animal data is provided in /server/data.js 
+ Some placeholder animal data is provided in /server/data.js 
 
 ```const data = require('./data');```
 
 ---
+The server was generated using [express-generator](https://expressjs.com/en/starter/generator.html)
+
 ### Install the server 
 
     > cd server 
@@ -17,6 +20,8 @@ Using these projects as a base, Fork this repo, and **write an Express API and R
 [http://localhost:3030](http://localhost:3030)
 
 ---
+The client was generated using [Create React App](https://github.com/facebook/create-react-app).
+
 ### Install the client
 
     > cd client
@@ -28,7 +33,9 @@ Using these projects as a base, Fork this repo, and **write an Express API and R
 
 [http://localhost:3000](http://localhost:3000)
 
-When you're done, commit your changes and open a PR into the original repo (https://github.com/MACU-Interviews/express-react-app)
+---
+
+When you're finished, commit your changes and open a PR into the original repo (https://github.com/MACU-Interviews/express-react-app)
 
 
 ## Extra credit
