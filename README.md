@@ -32,6 +32,6 @@ When you're done, commit your changes and open a PR into the original repo (http
 
 
 ## Extra credit
-Style the list
-Add create, update, and delete functionality
-Add a text search filter to the list
+* Style the list
+* Add create, update, and delete functionality
+* Add a text search filter to the list
