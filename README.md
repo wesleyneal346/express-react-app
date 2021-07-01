@@ -1,10 +1,10 @@
 # **Mountain America Coding Callenge**
-Using these projects as a base, fork this repo, and complete Parts 1 & 2. When you're finished, commit your changes and open a PR into the original repo (https://github.com/MACU-Interviews/express-react-app)
+Clone this repo (or download zip) and complete Parts 1 & 2. When you're finished, push your changes up to a public repo we can view or send it to us in a zipped file.
 
 ---
 
 ## **Part 1**
-Write an Express API and React app to display a list of animals. Please use hooks instead of component lifecycle methods.
+Write an Express API and React App to display a list of animals. Please use hooks instead of component lifecycle methods.
 
 Some placeholder animal data is provided in /server/data.js. (`const data = require('./data');`)
 
