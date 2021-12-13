@@ -4,7 +4,7 @@ Clone this repo (or download zip) and complete Parts 1 & 2. When you're finished
 ---
 
 ## **Part 1**
-Write an Express API and React App to display a list of animals. Please use hooks instead of component lifecycle methods.
+Complete the Express API and React App to display a list of animals. Please use hooks instead of component lifecycle methods.
 
 Some placeholder animal data is provided in /server/data.js. (`const data = require('./data');`)
 
