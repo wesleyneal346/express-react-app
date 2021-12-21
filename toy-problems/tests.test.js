@@ -2,7 +2,8 @@ const { expect } = require("@jest/globals");
 const { isPrime, nameVowels, addProperty, palindromes, anagrams, ageSum } = require("./");
 
 test("isPrime", () => {
-    expect(isPrime(1)).toEqual(true);
+    expect(isPrime(0)).toEqual(false);
+    expect(isPrime(1)).toEqual(false);
     expect(isPrime(2)).toEqual(true);
     expect(isPrime(3)).toEqual(true);
     expect(isPrime(4)).toEqual(false);
@@ -24,7 +25,7 @@ test("nameVowels", () => {
 
 test("addProperty", () => {
     const items = addProperty();
-    expect(items[0].gender).toEqual('F');
+    expect(items[0].gender).toEqual('M');
     expect(items[1].gender).toEqual('F');
     expect(items[2].gender).toEqual('F');
     expect(items[3].gender).toEqual('N/A');
