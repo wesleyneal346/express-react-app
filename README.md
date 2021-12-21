@@ -1,4 +1,4 @@
-# **Mountain America Coding Callenge**
+# **Mountain America Coding Challenge**
 Clone this repo (or download zip) and complete Parts 1 & 2. When you're finished, push your changes up to a public repo we can view or send it to us in a zipped file.
 
 ---
