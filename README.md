@@ -56,3 +56,11 @@ In `toy-problems/index.js` please complete the first function (`isPrime`) and be
 ### Test your code
 
     > npm run test
+    
+## Coding Standards
+
+I will attempt to use the React coding standards and best practices located ([here](https://www.jondjones.com/frontend/react/react-tutorials/react-coding-standards-and-practices-to-level-up-your-code/))
+
+## Documentation
+
+I will be using doxygen comments to document the code I write. VS Code has a nice extension to generate comment blocks for you like it does in Visual Studio.
