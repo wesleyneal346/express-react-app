@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 const router = express.Router();
 let animals = require('../data');
 
@@ -20,10 +19,8 @@ router.get('/animals', (req, res) => {
  */
 router.get('/animals/:id', (req, res) => {
     try {
-        
-        const id = parseInt(req.params.id);
-        const animal = animals.find( animal  => { 
-            return animal.id === id 
+        const animal = animals.find( animal  => {
+            return animal.id === parseInt(req.params.id) 
         } );
         
         if ( animal == undefined ) {
@@ -38,6 +35,54 @@ router.get('/animals/:id', (req, res) => {
 })
 
 //---------------------------------- POSTS ------------------------------------
+/**
+ * Adds a new animal. Creates a new ID based on the length of the current list
+ * of animals.
+ */
+router.post('/animals', (req, res) =>{
+    try {
+        newAnimal = { "id": animals.length + 1, ...req.body };
+        animals.push( newAnimal );
+        res.status(201).send(animals);
+    } catch ( error ) {
+        res.status(400).send();
+    }
+})
 
+//--------------------------------- PATCHES -----------------------------------
+
+router.patch('/animals/:id', (req, res) => {
+    // allow the user to update the animal's name and age but not their species
+    const id = parseInt( req.params.id );
+    const updates = Object.keys( req.body );
+    const allowedUpdates = [ 'name', 'age'];
+    const isValidUpdate = updates.every( update => {
+        return allowedUpdates.includes( update )
+    });
+
+    // Protect against the user attempting to update the id or the species
+    if ( !isValidUpdate ) {
+        return res.status( 400 ).send( { error: 'Invalid Update!' } );
+    }
+
+    try {
+        const targetAnimalIndex = animals.findIndex( animal => {
+            return animal.id === id 
+        });
+
+        if ( targetAnimalIndex === -1 ) {
+            return res.status( 404 ).send( { error: 'Could not find animal to update.' } );
+        }
+
+        updates.forEach( update => {
+            animals[ targetAnimalIndex ][ update ] = req.body[ update ];
+        });
+
+        res.send( animals[ targetAnimalIndex ] );
+
+    } catch (error) {
+        res.status(400);
+    }
+})
 
 module.exports = router
