@@ -1,11 +1,12 @@
 import React from 'react';
-import getAnimals from '../hooks/getAnimals'
-import AnimalList from "./AnimalList";
-// import getAnimals from "../hooks/getAnimals";
+import AnimalList from './AnimalList'
+import useAnimals from '../hooks/useAnimals'
 
-const App = async () => {
-  // const [selectedAnimal, setSelectedAnimal] = useState(null);
-  const animals = getAnimals()
+const App = () => {
+  const [animals, getData] = useAnimals()
+
+  getData()
+
   return (
     <div className='ui container'>
       <div className='ui grid'>

@@ -2,6 +2,7 @@ import React from 'react';
 import Animal from './Animal';
 
 const AnimalList = ({ animals }) => {
+    console.log(animals)
     const renderedList = animals.map(animal => {
         return (
             <Animal
