@@ -6,8 +6,6 @@ const data = require("../server/data");
  * @returns True if the number is prime, false if otherwise.
  */
 const isPrime = function (input) {
-    // your code here:  this function accepts a positive integer 'input' and should return true if the integer is prime and false if it is not (for simplicity, do not consider 0 or 1 as prime)
-
     if (input === 0) {
         return false;
     }
@@ -50,8 +48,12 @@ const nameVowels = function () {
     }).length;
 };
 
+/**
+ * Add the Gender property to the list of animals. 'F' if the ID is a prime
+ * number, 'M' if it is odd, and 'N/A' otherwise.
+ * @returns the list of animal data with the gender parameter included
+ */
 const addProperty = function () {
-    // your code here:  using 'data', this function should return (without changing the order) a list of animals with a property named 'gender' added to each animal. the value of this new property should be 'F' if the id is prime (highest priority), 'M' if the id is odd, and 'N/A' if the id is even (lowest priority)
     return data.map(animal => {
         let gender = 'N/A';
         if (isPrime(animal.id)) {
