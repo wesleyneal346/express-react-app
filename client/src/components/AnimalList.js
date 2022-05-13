@@ -15,7 +15,7 @@ const AnimalList = ({ animals }) => {
             />
         );
     });
-    return <div className='ui relaxed divided list'>{renderedList}</div>;
+    return <div className='list'>{renderedList}</div>;
 }
 
 export default AnimalList;

@@ -7,11 +7,7 @@ const App = () => {
 
   return (
     <div className='ui container'>
-      <div className='ui grid'>
-        <div className='eleven wide column'>
           <AnimalList animals={animals} />
-        </div>
-      </div>
     </div>
   );
 }
