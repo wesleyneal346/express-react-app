@@ -36,12 +36,13 @@ router.get( '/animals/:id', ( req, res ) => {
 
 //---------------------------------- POSTS ------------------------------------
 /**
- * Adds a new animal. Creates a new ID based on the length of the current list
- * of animals.
+ * Adds a new animal. Creates a new ID based on the id of the last animal in of
+ * the current list of animals.
  */
 router.post( '/animals', ( req, res ) =>{
     try {
-        newAnimal = { "id": animals.length + 1, ...req.body };
+        const lastAnimalID = animals.slice(-1)[0].id;
+        const newAnimal = { "id": lastAnimalID + 1, ...req.body };
         animals.push( newAnimal );
         res.status( 201 ).send( newAnimal );
     } catch ( error ) {
@@ -89,14 +90,17 @@ router.patch( '/animals/:id', ( req, res ) => {
 })
 
 //--------------------------------- DELETE ------------------------------------
-
+/**
+ * Deletes one animal based on their ID
+ */
 router.delete( '/animals/:id', (req, res) => {
     const id = parseInt( req.params.id );
 
     const indexToRemove = animals.findIndex( animal => {
-        return animal.id = id
+        console.log(animal.id, id);
+        return animal.id === id
     });
-
+    console.log(indexToRemove)
     if ( indexToRemove === -1 ) {
         return res.status( 400 ).send( { error: 'Could not delete requested animal.' } );
     }
