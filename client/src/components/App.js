@@ -7,7 +7,15 @@ const App = () => {
 
   return (
     <div className='ui container'>
-          <AnimalList animals={animals} />
+      <div className='ui equal width grid'>
+        <div className='column'>
+          <h1>Name/Age</h1>
+        </div>
+        <div className='column'>
+          <h1>Species</h1>
+        </div>
+      </div>
+      <AnimalList animals={animals} />
     </div>
   );
 }
