@@ -1,16 +1,43 @@
 const express = require('express');
 const fs = require('fs');
-const router = express.Router()
+const router = express.Router();
+let animals = require('../data');
 
-router.get('/animal', async (req, res) => {
+//---------------------------------- GETS -------------------------------------
+/**
+ * Gets the current list of animals
+ */
+router.get('/animals', (req, res) => {
     try {
-        await fs.readFile('../data.js', (error, jsonData) => {
-            let animalData = JSON.parse(jsonData);
-            res.json(animalData);
-        });
+        res.send(animals)
     } catch (error) {
         res.status(404).send();
     }
 })
+
+/**
+ * Get an animal by their ID
+ */
+router.get('/animals/:id', (req, res) => {
+    try {
+        
+        const id = parseInt(req.params.id);
+        const animal = animals.find( animal  => { 
+            return animal.id === id 
+        } );
+        
+        if ( animal == undefined ) {
+            res.status( 400 ).send();
+        }
+        
+        res.send(animal);
+
+    } catch (error) {
+        res.status(404).send();
+    }
+})
+
+//---------------------------------- POSTS ------------------------------------
+
 
 module.exports = router
