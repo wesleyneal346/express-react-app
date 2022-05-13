@@ -34,7 +34,7 @@ router.get( '/animals/:id', ( req, res ) => {
     }
 })
 
-//---------------------------------- POSTS ------------------------------------
+//---------------------------------- POST ------------------------------------_
 /**
  * Adds a new animal. Creates a new ID based on the id of the last animal in of
  * the current list of animals.
@@ -50,7 +50,7 @@ router.post( '/animals', ( req, res ) =>{
     }
 })
 
-//--------------------------------- PATCHES -----------------------------------
+//---------------------------------- PATCH -----------------------------------_
 /**
  * Updates a single animal. Cannot update species
  */
