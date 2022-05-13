@@ -61,7 +61,7 @@ const addProperty = function () {
         } else if (animal.id % 2 == 1) {
             gender = 'M'
         }
-        return {...animal, gender};
+        return { ...animal, gender };
     })
 };
 
@@ -72,7 +72,7 @@ const addProperty = function () {
  */
 const palindromes = function (input) {
     const reversed = [...input].reverse().join("");
-    if (reversed.toLowerCase() === input.toLowerCase() ) {
+    if (reversed.toLowerCase() === input.toLowerCase()) {
         return true;
     }
     return false;
@@ -87,7 +87,7 @@ const palindromes = function (input) {
 const anagrams = function (input1, input2) {
     temp1 = [...input1].sort();
     temp2 = [...input2].sort();
-    
+
     if (temp1 === temp2) {
         return true;
     } else {
@@ -101,7 +101,7 @@ const anagrams = function (input1, input2) {
  */
 const ageSum = function () {
     let initialValue = 0
-    return data.reduce( (previousValue, currentValue) => {
+    return data.reduce((previousValue, currentValue) => {
         return previousValue + currentValue.age
     }, initialValue);
 };
