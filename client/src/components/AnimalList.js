@@ -2,16 +2,13 @@ import React from 'react';
 import Animal from './Animal';
 
 const AnimalList = ({ animals }) => {
-    let bg = ''
     const renderedList = animals.map(animal => {
-        if (animal.id % 2 === 1) {
-            bg = 'grey';
-        }
+        const bgOption = animal.id % 2;
         return (
             <Animal
                 key={animal.id}
                 animal={animal}
-                bg={bg}
+                bgOption={bgOption}
             />
         );
     });
