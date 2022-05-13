@@ -59,7 +59,7 @@ In `toy-problems/index.js` please complete the first function (`isPrime`) and be
     
 ## Coding Standards
 
-I will attempt to use the React coding standards and best practices located ([here](https://www.jondjones.com/frontend/react/react-tutorials/react-coding-standards-and-practices-to-level-up-your-code/))
+`TODO`: Research how to implement coding standards into VS Code upon save or auto-complete.
 
 ## Documentation
 
