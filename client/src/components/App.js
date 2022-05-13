@@ -3,9 +3,7 @@ import AnimalList from './AnimalList'
 import useAnimals from '../hooks/useAnimals'
 
 const App = () => {
-  const [animals, getData] = useAnimals()
-
-  getData()
+  const [animals, error, loaded] = useAnimals('/animals');
 
   return (
     <div className='ui container'>

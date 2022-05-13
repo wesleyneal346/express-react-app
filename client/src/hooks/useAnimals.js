@@ -1,23 +1,25 @@
 import { useState, useEffect } from "react";
 import animalsAPI from '../api';
 
-const useAnimals = () => {
+const useAnimalsGet = (url) => {
   const [animals, setAnimals] = useState([]);
+  const [error, setError] = useState("");
+  const [loaded, setLoaded] = useState(false);
 
-  try {
-    useEffect(() =>{
-      getData()
-    })
-    const getData = async () => {
-      const response = await animalsAPI.get('/animals');
-      setAnimals(response.data)
-    }
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await animalsAPI.get(url);
+        setAnimals(response.data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoaded(true);
+      }
+    })();
+  }, []);
 
-    return [animals, getData]
-
-  } catch (error) {
-    console.log(error);
-  }
+  return [animals, error, loaded]
 };
 
-export default useAnimals;
+export default useAnimalsGet;
