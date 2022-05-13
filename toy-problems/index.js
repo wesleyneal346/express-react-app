@@ -85,8 +85,8 @@ const palindromes = function (input) {
  * @returns true if the two input strings are palindroms of one another, false otherwise
  */
 const anagrams = function (input1, input2) {
-    temp1 = [...input1].sort();
-    temp2 = [...input2].sort();
+    temp1 = [...input1.toLowerCase()].sort().join("");
+    temp2 = [...input2.toLowerCase()].sort().join("");
 
     if (temp1 === temp2) {
         return true;
@@ -106,6 +106,7 @@ const ageSum = function () {
     }, initialValue);
 };
 
+anagrams('aaaa', 'aaaa');
 
 module.exports = {
     isPrime,
